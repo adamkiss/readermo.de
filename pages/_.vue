@@ -2,16 +2,16 @@
 	<section class="container blurrable">
 		<nuxt-link to='/'>Back to home</nuxt-link>
 		<h1>{{ currentPage.title }}</h1>
-		<div ref="pageBody" v-html="currentPage.body" />
+		<Reader :url="url"/>
 	</section>
 </template>
 
 <script>
+import Reader from '@/components/Reader'
 import {mapGetters, mapActions} from 'vuex'
 
-const isLink = el => (el.nodeName === 'A' && 'href' in el && el.href)
-
 export default {
+	components: {Reader},
 	computed: {
 		...mapGetters({is: 'is', getPage: 'pages/get'}),
 		currentPage() {
@@ -25,18 +25,6 @@ export default {
 		if (store.getters.is('error')) {
 			return error(store.error)
 		}
-	},
-	mounted() {
-		this.$refs.pageBody.addEventListener('click', e => {
-			if (!isLink(e.target))
-				return true
-
-			e.preventDefault();
-			this.$router.push({
-				path: encodeURIComponent(e.target.href)
-			})
-		}, {capture: true, once: true})
-
 	}
 }
 </script>
