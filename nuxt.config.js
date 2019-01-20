@@ -39,7 +39,7 @@ module.exports = {
 	modules: [
 		// Doc: https://axios.nuxtjs.org/usage
 		'@nuxtjs/axios',
-		'@nuxtjs/pwa',
+		// '@nuxtjs/pwa', turned off: waiting for new version of https://github.com/nuxt-community/modules
 		['nuxt-fontawesome', {component: 'fa'}]
 	],
 

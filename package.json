@@ -17,8 +17,11 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
+    "is-url": "^1.2.4",
+    "node-sass": "^4.11.0",
     "nuxt": "^2.3.4",
-    "nuxt-fontawesome": "^0.4.0"
+    "nuxt-fontawesome": "^0.4.0",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "eslint-plugin-vue": "^5.1.0",
