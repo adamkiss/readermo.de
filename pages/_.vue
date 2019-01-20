@@ -1,23 +1,19 @@
 <template>
 	<section class="container blurrable">
-		<nuxt-link to='/'>Back to home</nuxt-link>
-		<h1>{{ currentPage.title }}</h1>
-		<Reader :url="url"/>
+		<Header />
+		<Reader />
+		<Footer />
 	</section>
 </template>
 
 <script>
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import Reader from '@/components/Reader'
 import {mapGetters, mapActions} from 'vuex'
 
 export default {
-	components: {Reader},
-	computed: {
-		...mapGetters({is: 'is', getPage: 'pages/get'}),
-		currentPage() {
-			return this.getPage(this.$store.state.url)
-		}
-	},
+	components: {Header, Footer, Reader},
 	async asyncData ({store, params, error}) {
 		const url = decodeURIComponent(params.pathMatch)
 		await store.dispatch('pages/load', {url})
