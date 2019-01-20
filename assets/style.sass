@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/mixins/clearfix"
+@import "~bootstrap/scss/mixins/hover"
+@import "~include-media-mq/index"
+@import "vara"
+
+@import "reboot-defaults"
+@import "~bootstrap/scss/reboot"
+
+@import "settings"
+
+body
+	background: green
+
+.state--loading
+	background: red !important
+
+.state--loading .blurrable
+	filter: blur(5px)
