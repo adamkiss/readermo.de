@@ -1,5 +1,7 @@
 /* global process */
 
+import Url from '../src/url'
+
 const apiUrl = process.env.NODE_ENV === 'development' ?
 	'http://lapi.readmo.de.localhost/' :
 	'https://api.readmo.de/'
@@ -11,6 +13,7 @@ const dispatchError = function (dispatchFunc, error) {
 const loadPage = async function ({url, nuxt, dispatch}) {
 	try {
 		const {data: {page}} = await nuxt.$axios.post(apiUrl, {url})
+		page.url = new Url(url)
 		return page
 	} catch (error) {
 		// Let's try to dispatch most meaningful error
