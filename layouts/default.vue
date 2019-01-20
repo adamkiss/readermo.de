@@ -8,8 +8,10 @@
 import {mapGetters} from 'vuex';
 
 export default {
-	data: {
-		appClass: 'app'
+	data() {
+		return {
+			appClass: 'app'
+		}
 	},
 	computed: {
 		...mapGetters({
