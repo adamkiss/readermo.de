@@ -11,12 +11,45 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/pro-light-svg-icons": "^5.6.3",
+    "@fortawesome/pro-regular-svg-icons": "^5.6.3",
+    "@fortawesome/pro-solid-svg-icons": "^5.6.3",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.3.4",
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^2.6.0"
+    "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "eslint-plugin-vue": "^5.1.0",
+    "nodemon": "^1.18.9",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "plugins": [
+      "vue"
+    ],
+    "semicolon": false,
+    "rules": {
+      "import/order": 0,
+      "import/no-unassigned-import": [
+        "error",
+        {
+          "allow": [
+            "**/*.css"
+          ]
+        }
+      ],
+      "generator-star-spacing": 0,
+      "capitalized-comments": 0,
+      "require-yield": 0,
+      "func-names": 0,
+      "operator-linebreak": 0,
+      "curly": [
+        "error",
+        "multi",
+        "consistent"
+      ]
+    }
   }
 }
