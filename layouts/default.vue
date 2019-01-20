@@ -1,13 +1,18 @@
 <template>
-	<div :class='[appClass, stateClass, ...settingsClasses]'>
-		<nuxt/>
-	</div>
+	<nuxt/>
 </template>
 
 <script>
 import {mapGetters} from 'vuex';
 
 export default {
+	head() {
+		return {
+			bodyAttrs: {
+				class: [this.stateClass, ...this.settingsClasses].join(' ')
+			}
+		}
+	},
 	data() {
 		return {
 			appClass: 'app'
