@@ -1,0 +1,12 @@
+[Settings]
+ID = 'readermo.de'
+
+[build]
+command = 'npm run generate'
+publish = 'dist'
+
+# Redirect every route to index and let Vue handle it
+[[redirects]]
+from="/*"
+to="index.html"
+status=200

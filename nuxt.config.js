@@ -52,6 +52,6 @@ module.exports = {
 	** Build configuration
 	*/
 	build: {
-		extend(/* config, ctx */) {}
+		extractCSS: true
 	}
 }
