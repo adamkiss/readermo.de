@@ -4,8 +4,8 @@ import Url from '../src/url'
 import Page from '../src/page'
 
 const apiUrl = process.env.NODE_ENV === 'development' ?
-	'http://lapi.readmo.de.localhost/' :
-	'https://api.readmo.de/'
+	'http://lapi.readermo.de.localhost/' :
+	'https://api.readermo.de/'
 
 const dispatchError = function (dispatchFunc, error) {
 	return dispatchFunc('setError', {error}, {root: true})
