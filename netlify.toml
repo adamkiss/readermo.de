@@ -4,7 +4,7 @@ ID = 'readermo.de'
 [build]
 command = 'npm run export'
 publish = '__sapper__/export'
-functions = './functions'
+functions = 'functions'
 
 # Redirect every route to index and let Sapper handle it
 [[redirects]]
