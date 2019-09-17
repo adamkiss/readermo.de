@@ -1,60 +1,48 @@
 {
-  "name": "readermo.de",
-  "version": "0.1.0",
-  "description": "Use Reader Mode, any page, any time.",
-  "author": "Adam Kiss",
-  "private": true,
+  "name": "TODO",
+  "description": "TODO",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "sapper dev",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
+    "start": "node __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
   },
+  "browserslist": [
+    "last 3 version"
+  ],
   "dependencies": {
-    "@fortawesome/pro-light-svg-icons": "^5.6.3",
-    "@fortawesome/pro-regular-svg-icons": "^5.6.3",
-    "@fortawesome/pro-solid-svg-icons": "^5.6.3",
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^2.6.0",
-    "bootstrap": "^4.2.1",
-    "cross-env": "^5.2.0",
-    "include-media-mq": "^1.0.2",
-    "is-url": "^1.2.4",
-    "node-sass": "^4.11.0",
-    "nuxt": "^2.3.4",
-    "nuxt-fontawesome": "^0.4.0",
-    "sass-loader": "^7.1.0"
+    "compression": "^1.7.1",
+    "polka": "^0.5.0",
+    "sirv": "^0.4.0"
   },
   "devDependencies": {
-    "eslint-plugin-vue": "^5.1.0",
-    "nodemon": "^1.18.9",
-    "xo": "^0.24.0"
-  },
-  "xo": {
-    "plugins": [
-      "vue"
-    ],
-    "semicolon": false,
-    "rules": {
-      "import/order": 0,
-      "import/no-unassigned-import": [
-        "error",
-        {
-          "allow": [
-            "**/*.css"
-          ]
-        }
-      ],
-      "generator-star-spacing": 0,
-      "capitalized-comments": 0,
-      "require-yield": 0,
-      "func-names": 0,
-      "operator-linebreak": 0,
-      "curly": [
-        "error",
-        "multi",
-        "consistent"
-      ]
-    }
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "autoprefixer": "^9.5.1",
+    "cssnano": "^4.1.10",
+    "postcss": "^7.0.16",
+    "postcss-import": "^12.0.1",
+    "postcss-url": "^8.0.0",
+    "purgecss-from-svelte": "^2.0.2",
+    "rollup": "^1.12.0",
+    "rollup-plugin-babel": "^4.0.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-svelte": "^5.0.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^2.9.0",
+    "tailwindcss": "^1.0.1"
   }
 }

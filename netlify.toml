@@ -2,10 +2,10 @@
 ID = 'readermo.de'
 
 [build]
-command = 'npm run generate'
-publish = 'dist'
+command = 'npm run export'
+publish = '__sapper__/export'
 
-# Redirect every route to index and let Vue handle it
+# Redirect every route to index and let Sapper handle it
 [[redirects]]
 from="/*"
 to="index.html"
