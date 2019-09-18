@@ -1,16 +1,23 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-exports.handler = async (event, context) => {
+/* eslint-disable */
+const Mercury = require('@postlight/mercury-parser')
+
+exports.handler = async function(event, context) {
 	try {
-		const subject = event.queryStringParameters.name || "World";
+		if (event.httpMethod !== 'POST') return {statusCode: 405, body: "Method not allowed"}
+
+		const {url} = JSON.parse(event.body)
+		const result = await Mercury.parse(url);
+
 		return {
 			statusCode: 200,
-			body: {event, context}
-			// body: JSON.stringify({ message: `Hello ${subject}` })
-			// // more keys you can return:
-			// headers: { "headerName": "headerValue", ... },
-			// isBase64Encoded: true,
+			body: JSON.stringify(result)
 		};
 	} catch (err) {
-		return { statusCode: 500, body: err.toString() };
+		console.log(err); // output to netlify function log
+
+		return {
+			statusCode: 500,
+			body: JSON.stringify({ msg: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
+		};
 	}
 };
