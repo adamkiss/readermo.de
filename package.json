@@ -1,15 +1,10 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "readermo.de",
+  "description": "Reader Mode for the web",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "prod": "sapper export --legacy"
   },
   "browserslist": [
     "last 3 version"
@@ -17,6 +12,7 @@
   "dependencies": {
     "@postlight/mercury-parser": "~2.2.0",
     "compression": "^1.7.1",
+    "express": "^4.17.1",
     "polka": "^0.5.0",
     "sirv": "^0.4.0"
   },
@@ -29,6 +25,7 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.5.1",
     "cssnano": "^4.1.10",
+    "npm-run-all": "^4.1.5",
     "postcss": "^7.0.16",
     "postcss-import": "^12.0.1",
     "postcss-url": "^8.0.0",
